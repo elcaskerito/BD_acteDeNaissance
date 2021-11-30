@@ -3,6 +3,18 @@
 #   PROGRAMME POUR LA CREATION D'UNE BASE DE DONNEES D'ENREGISTREMENT DES NAISSANCES A L'HÔPITAL      # 
 #                                                                                                     #
 #*****************************************************************************************************#
+# Pré-requis : 
+#
+# - avoir un Server local avec SGBD mysql
+# - installer mysql-connector pour python.
+# - installer python dans votre machine
+# 
+#
+# Guide D'Utilisation : 
+#
+#   - avant d'exécuter ce script il faut dabord créer au préalable une base de données nommée "naissanceDB" dans votre système de gestion de Base de Données
+#   - ensuite ajouter le mot de passe de votre SGBD a la ligne 24 de ce fichier. si votre SGBD n'a pas de mot de passe laisser cette partie vide
+
 import mysql.connector
 
 #connexion au base de données
