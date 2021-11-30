@@ -10,7 +10,7 @@ db = mysql.connector.connect(
   host = "localhost",
   user = "root",
   password = "TopSecret@_1998",
-  database = "naissanceDB1"
+  database = "naissanceDB"
 )
 
 #créer un curseur de base de données pour effectuer des opérations SQL
