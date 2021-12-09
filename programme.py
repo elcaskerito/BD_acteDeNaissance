@@ -14,14 +14,12 @@
 #
 #   - avant d'exécuter ce script il faut dabord créer au préalable une base de données nommée "naissanceDB" dans votre système de gestion de Base de Données
 #   - ensuite ajouter le mot de passe de votre SGBD a la ligne 24 de ce fichier. si votre SGBD n'a pas de mot de passe laisser cette partie vide
-
 import mysql.connector
-
 #connexion au base de données
 db = mysql.connector.connect(
   host = "localhost",
   user = "root",
-  password = "",
+  password = "TopSecret_1998@",
   database = "naissanceDB"
 )
 
@@ -67,17 +65,17 @@ cur.execute(sql2)
 
 #*******************************************************************************************************
 #requéte SQL permettant d'inserer les données dans la table nouveau né 
-sql = "INSERT INTO `nouveau_ne`(id_nouveau_né,`nom`, `prenom`, `nom_pere`, `situation_matrimoniale_père`, `fonction_père`, `nom_mère`, `situation_matrimonial_mère`, `fonction_mère`, `sexe_enfant`, `lieu_de_naissance`, `date_naissance`, `heure_de_naissance`) VALUES (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
+sql = "INSERT INTO `nouveau_ne`(nom, `prenom`, `nom_pere`, `situation_matrimoniale_père`, `fonction_père`, `nom_mère`, `situation_matrimonial_mère`, `fonction_mère`, `sexe_enfant`, `lieu_de_naissance`, `date_naissance`, `heure_de_naissance`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
 
 #les valeurs de la requéte SQL
-value = (1,"idris", "mahamat  ","Mahamat idris","marié","Avocat","kelou fatime","mariée", "sage femme","masculin","N'djamena","1998-11-1","10:20")
+value = ("idris", "mahamat  ","Mahamat idris","marié","Avocat","kelou fatime","mariée", "sage femme","masculin","N'djamena","1998-11-1","10:20")
 
 cur.execute(sql, value)
 
 #*******************************************************************************************************
 #requéte SQL permettant d'inserer les données dans la table utilisateur
-sql = "INSERT INTO `utilisateur`(`iduser`, `nom`, `prenom`, `login`, `password`, `role`) VALUES (%s, %s, %s, %s, %s, %s)"
-valueuser=(1,"Nassir", "ahmat","ali","nassir19","Fonctionnaire")
+sql = "INSERT INTO `utilisateur`(`nom`, `prenom`, `login`, `password`, `role`) VALUES (%s, %s, %s, %s, %s)"
+valueuser=("Nassir", "ahmat","ali","nassir19","Fonctionnaire")
 
 cur.execute(sql, valueuser)
 
