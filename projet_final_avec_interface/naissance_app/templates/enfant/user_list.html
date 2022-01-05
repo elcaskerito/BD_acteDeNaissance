@@ -1,0 +1,49 @@
+{% extends 'enfant/layout.html' %}
+
+						{% block content %}
+							<h1>Liste des Utilisateurs...</h1>
+
+                            <div class="col-12 d-flex justify-content-end mb-2"> <a class="btn btn-primary sm " href="{% url 'add_user' %}">
+								Ajouter un nouvel utilisateur
+						</a></div>         
+                        
+
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom</th>
+									  <th>Prenom</th>
+									  <th>mail</th>
+									  <th>role</th>
+								
+									  <th>Mise a jour</th>
+									  <th>Supprimer</th>
+									  <th>Details</th>
+									  
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for utilisateur  in  utilisateur %} 
+									<tr class="success">
+									  <td>{{utilisateur.nom}}</td>
+									  <td>{{utilisateur.prenom}}</td>
+									  <td>{{utilisateur.mail}}</td>
+									  <td>{{utilisateur.role}}</td>
+									  
+									  <td><a class="btn btn-outline-primary sm" href="{% url 'update_user' utilisateur.id %}">
+										Update
+								  		</a></td>
+									  <td> <a class="btn btn-outline-danger sm" href="{% url 'delete-user' utilisateur.id %}">
+										Delete
+									  </a></td>
+									  <td><a class="btn btn-outline-info sm" href="#">
+										Details
+									</a></td>
+
+						
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

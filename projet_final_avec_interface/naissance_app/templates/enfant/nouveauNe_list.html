@@ -1,0 +1,49 @@
+{% extends 'enfant/layout.html' %}
+
+						{% block content %}
+							<h1>Liste des nouveaux nés...</h1>
+
+                            <div class="col-12 d-flex justify-content-end mb-2"> <a class="btn btn-primary sm " href="{% url 'ajout_newborn' %}">
+								Ajouter un nouveau né
+						</a></div>         
+                        
+
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom</th>
+									  <th>Prenom</th>
+									  <th>Sexe</th>
+									  <th>Date</th>
+									  <th>Heure</th>
+									  <th>Mise a jour</th>
+									  <th>Supprimer</th>
+									  <th>Details</th>
+									  
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for nouveau_ne  in  Nouveau_ne %} 
+									<tr class="success">
+									  <td>{{nouveau_ne.nom}}</td>
+									  <td>{{nouveau_ne.prenom}}</td>
+									  <td>{{nouveau_ne.sexe}}</td>
+									  <td>{{nouveau_ne.dateAnne}}</td>
+									  <td>{{nouveau_ne.heure}}</td>
+									  <td><a class="btn btn-outline-primary sm" href="{% url 'update-newborn' nouveau_ne.id %}">
+										Update
+								  		</a></td>
+									  <td> <a class="btn btn-outline-danger sm" href="{% url 'delete-newborn' nouveau_ne.id %}">
+										Delete
+									  </a></td>
+									  <td><a class="btn btn-outline-info sm" href="{% url 'show_newborn' nouveau_ne.id %}">
+										Details
+									</a></td>
+
+						
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

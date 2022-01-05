@@ -1,0 +1,26 @@
+{%extends 'enfant/layout.html' %}
+
+							{%block content%}
+							<div class="row">
+								<div class="col-sm-2"></div>
+							<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+								<center>
+
+									<h1>Modifier les Données de l'utilisateur</h1>
+								</br>
+								{% if submitted %}
+									<h1>Les Données de l'utilisateur ont été Modifié avec succés...!</h1>
+								{% else %}
+								<form action="", method="POST">
+									{% csrf_token %}
+									{{ form.as_p}}
+
+									  <div class="d-flex justify-content-end mb-2">
+										<button type="submit" class="btn btn-primary mb-3" value="">Submit</button>
+									  </div>
+								</form>
+								{% endif %}
+								</center>
+							</div>
+							</div> 
+							{%endblock%}
