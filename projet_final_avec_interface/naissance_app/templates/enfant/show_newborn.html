@@ -1,0 +1,76 @@
+{%extends 'enfant/layout.html' %}
+
+							{%block content%}
+							<div class="row">
+								<div class="col-sm-2"></div>
+								
+							  
+							<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+								<center>
+
+									<h1>Details d'un nouveau né...</h1>
+								</br>
+							 {% comment %}
+							 {% for nouveau_ne in Nouveau_ne.all %}
+                                {{ nouveau_ne }}
+								{% endfor %}
+							 {% endcomment %}
+								<table class="table table-bordered table-striped table-hover">
+									<tbody> 
+										           
+									  <tr class="success"> 
+										
+										<td><strong>ID: </strong>{{nouveau_ne.id}}</td>
+									  </tr>
+
+										<tr class="success"> 
+										<td><strong>Nom:</strong> {{nouveau_ne.nom}}</td>
+									  </tr>
+
+										<tr class="success"> 
+										<td><strong>Prenon:</strong> {{nouveau_ne.prenom}}</td>
+									  </tr>
+
+										<tr class="success"> 
+										<td><strong>Sexe:</strong> {{nouveau_ne.sexe}}</td>
+									  </tr>
+
+									  
+									  <tr class="success"> 
+										<td><strong>Lieu de naissance</strong> {{nouveau_ne.lieu}}</td>
+									   </tr>
+
+										<tr class="success"> 
+										 <td><strong>Date de naissance:</strong> {{nouveau_ne.dateAnne}}</td>
+										</tr>
+
+                                        <tr class="success"> 
+                                            <td><strong>Heure de naissance:</strong> {{nouveau_ne.heure}}</td>
+                                           </tr>
+
+                                           <tr class="success"> 
+                                            <td><strong>Nom du pere:</strong> {{nouveau_ne.nom_pere}}</td>
+                                           </tr>
+                                           
+                                            <tr class="success"> 
+                                                <td><strong>situation matrimoniale du pere:</strong> {{nouveau_ne.situ_matri_pere}}</td>
+                                               </tr>
+                                           
+                                               <tr class="success"> 
+                                                <td><strong>Fonction du pere:</strong> {{nouveau_ne.fonction_pere}}</td>
+                                               </tr>
+
+                                            <tr class="success"> 
+                                                <td><strong>Nom de mere:</strong> {{nouveau_ne.nom_mere}}</td>
+                                               </tr>
+                                               <tr class="success"> 
+                                                <td><strong>Fonction de la mere:</strong> {{nouveau_ne.fonction_mere}}</td>
+                                               </tr>
+
+                                               <tr class="success"> 
+                                                <td><strong>situation matrimoniale de mere:</strong> {{nouveau_ne.situa_matri_pere}}</td>
+                                               </tr>
+											   
+									</tbody>
+									
+									{%endblock%}

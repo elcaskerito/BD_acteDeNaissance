@@ -1,0 +1,13 @@
+{% extends 'enfant/layout.html' %}
+
+							{% block content %}
+							<div class="row">
+								<div class="col-md-2"></div>
+								<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+									<center>
+											<h1>L'Element que vous cherchez n'existe pas...</h1>
+
+									</center>
+								</div>
+							</div>
+							{% endblock %}
